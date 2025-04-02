@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Innovate Ed</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    if (this.getAttribute("href").startsWith("#")) {
+                        event.preventDefault();
+                        const section = document.querySelector(this.getAttribute("href"));
+                        section.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+            });
+        });
+    </script>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav a.login-btn {
+            background-color: #62B6CB;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav .logo {
+            font-size: 24px; /* Placeholder for logo */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="../images/tinylogoie.png" alt="Innovate Ed Logo" class="logo">
+         <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="courses.html">Courses</a>
+            <a href="#contact">Contact</a>
+         </div>
+        <a href="#" class="login-btn">Login</a> 
+    </nav>
+
+    <header id="home">
+        <h1>Innovate Ed</h1>
+        <p>Empowering communities through education and collaboration</p>
+    </header>
+
+    <section id="who-we-are">
+        <h2>Who We Are</h2>
+        <p>We are high schoolers who want to teach computer and other internet-related skills to kids.</p>
+    </section>
+
+    <section id="our-courses">
+        <h2>Our Courses</h2>
+        <div class="courses">
+            <div class="course">Course 1</div>
+            <div class="course">Course 2</div>
+            <div class="course">Course 3</div>
+            <div class="course">Course 4</div>
+            <div class="course">Course 5</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Welcome to our website! We are a team of passionate individuals dedicated to delivering the best experience for our users. Our mission is to create innovative solutions and provide exceptional service.</p>
+        <p>Our team values collaboration, creativity, and commitment to excellence. Thank you for visiting our site, and we look forward to connecting with you!</p>
+    </section>
+
+    <section id="our-partners">
+        <h2>Our Partners</h2>
+        <div class="partners">
+            <div class="partner">Partner 1</div>
+            <div class="partner">Partner 2</div>
+            <div class="partner">Partner 3</div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you!</p>
+        <form action="submit_form.php" method="post">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email"></label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+            <label for="message"></label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Our Organization. All rights reserved.</p>
+    </footer>
+</body>
+</html>
